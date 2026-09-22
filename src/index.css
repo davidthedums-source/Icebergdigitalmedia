@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #081426;
+    background-color: #F5F9FF;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes slow-blob-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.12);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
+}
+
+@keyframes slow-blob-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-50px, 40px) scale(1.08);
+  }
+  66% {
+    transform: translate(40px, -40px) scale(0.92);
+  }
+}
+
+@keyframes slow-blob-3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, 50px) scale(1.15);
+  }
+}
+
+@keyframes float-subtle-1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes float-subtle-2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-1.5deg);
+  }
+}
+
+@keyframes float-subtle-3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.2deg);
+  }
+}
+
+@keyframes wave-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-slow-blob-1 {
+  animation: slow-blob-1 24s ease-in-out infinite;
+}
+
+.animate-slow-blob-2 {
+  animation: slow-blob-2 28s ease-in-out infinite;
+}
+
+.animate-slow-blob-3 {
+  animation: slow-blob-3 32s ease-in-out infinite;
+}
+
+.animate-float-1 {
+  animation: float-subtle-1 7s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-subtle-2 9s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-subtle-3 8s ease-in-out infinite;
+}
+
+.animate-wave-slow {
+  background-size: 200% 200%;
+  animation: wave-gradient 18s ease infinite;
+}
+
+/* Glassmorphism and lighting utilities */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.glass-panel-dark {
+  background: rgba(7, 26, 61, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(110, 219, 255, 0.15);
+}
+
+.text-gradient-stripe {
+  background: linear-gradient(135deg, #071A3D 0%, #2457FF 55%, #00B4D8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-ice {
+  background: linear-gradient(135deg, #FFFFFF 0%, #B8F3FF 50%, #6EDBFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,89 @@
+{
+  "entities": {
+    "QuoteInquiry": {
+      "title": "Quote Inquiry",
+      "description": "Custom print, packaging, and brand specification inquiry submitted by clients",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "finish": {
+          "type": "string"
+        },
+        "turnaround": {
+          "type": "string"
+        },
+        "clientName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "clientEmail": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "clientPhone": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "reviewed", "in_production", "completed"]
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": ["category", "quantity", "clientName", "clientEmail", "status", "createdAt"]
+    },
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "User profile data for authenticated clients or studio admins",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "role": {
+          "type": "string",
+          "enum": ["client", "admin"]
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": ["email", "displayName", "role", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/quotes/{quoteId}": {
+      "schema": "QuoteInquiry",
+      "description": "Client quote inquiries and custom print specifications"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Client profiles and studio administrative access"
+    }
+  }
+}
